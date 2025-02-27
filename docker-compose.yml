@@ -21,6 +21,8 @@ services:
             sh -c "chmod +x /var/www/weather-alerts/entrypoint.sh && /var/www/weather-alerts/entrypoint.sh"
         networks:
             - app-network
+        depends_on:
+            - db
 
     # Nginx Service
     webserver:

@@ -34,7 +34,7 @@ class WeatherController extends Controller
     public function __invoke(Request $request): Response
     {
         $city = $request->query('city', self::DEFAULT_CITY);
-
+        // dd($this->service->getWeather($city), $this->service->getForecast($city), $city);
         return Inertia::render('Weather', [
             'weather' => $this->service->getWeather($city),
             'forecast' => $this->service->getForecast($city),
