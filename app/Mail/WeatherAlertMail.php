@@ -34,7 +34,15 @@ class WeatherAlertMail extends Mailable
         return $this
             ->subject('Weather Alert Notification')
             ->markdown('emails.weather_alert', [
-                'data' => $this->weatherData
+                'data' => $this->getWeatherData()
             ]);
+    }
+
+    /**
+     * @return array
+     */
+    public function getWeatherData(): array
+    {
+        return $this->weatherData;
     }
 }

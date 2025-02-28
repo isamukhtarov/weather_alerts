@@ -12,6 +12,7 @@ COPY composer.lock composer.json /var/www/weather-alerts/
 USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    default-mysql-client \
     ntpdate \
     netcat-openbsd \
     build-essential \
