@@ -7,10 +7,6 @@ namespace App\Services;
 use App\Mail\WeatherAlertMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Facades\Log;
->>>>>>> master
 use Illuminate\Support\Facades\Mail;
 
 /**
@@ -117,10 +113,6 @@ class WeatherService
         $emails = User::query()->pluck('email')->unique();
 
         foreach ($emails as $email) {
-<<<<<<< HEAD
-=======
-            Log::info("Email sent to: {$email}");
->>>>>>> master
             Mail::to($email)->send(new WeatherAlertMail($this->weatherData));
         }
 
